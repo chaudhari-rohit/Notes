@@ -26,26 +26,26 @@ Notes
     - ` Parent parent = new Child();` Only way allowed. Why ? Because Child has got acess to all 
       parents method and thus is guarented to always get the method referenced from Parent 
       reference. The other way round is not guaranted.
-    - ```java
-      Parent p = new Parent();
-      p.parentOnly();
-      p.common();
-      Child child = new Child();
-      child.childOnly();
-      child.common();
-      child.parentOnly();
-      Parent parent = new Child();
-      parent.parentOnly();
-      parent.common();
-      ```
+      - ```java
+          Parent p = new Parent();
+          p.parentOnly();
+          p.common();
+          Child child = new Child();
+          child.childOnly();
+          child.common();
+          child.parentOnly();
+          Parent parent = new Child();
+          parent.parentOnly();
+          parent.common();
+        ```
     - We get a `ClassCastException` a `RuntimeException` if we do the oppostite by force. And 
       compile time error if we do this `Child child = new Parent();`
       - ```java
-              @Test(expected = ClassCastException.class)
-              public void testChildReferenceInstatiatedWithParentConstructor() {
-              Child child1 = (Child) new Parent();
-              child1.childOnly();
-              child1.common();
-              }
+        @Test(expected = ClassCastException.class)
+        public void testChildReferenceInstatiatedWithParentConstructor() {
+            Child child = (Child) new Parent();
+            child.childOnly();
+            child.common();
+        }
         ```
       
