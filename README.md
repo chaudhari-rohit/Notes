@@ -45,7 +45,22 @@ Notes
         public void testChildReferenceInstatiatedWithParentConstructor() {
             Child child = (Child) new Parent();
             child.childOnly();
+        
             child.common();
         }
         ```
-      
+        
+- How to make any class Immutable (where once set the state does not change) ?
+    -  First we need to remove all setters and all methods which allow the state to be changed. 
+       Now there are 2 cases:
+       If the member fields are
+       - `Immutable` : then the only change we need is to make them private and final and provide 
+         only getters.
+       - `Mutable (Normal)` : then we need to ensure that getters and constructors maintain deep 
+         copy. Reason being the object is prone to change from reference. From getter we can get 
+         reference to the field and as it is mutable we can change the state hence making the 
+         enitre object mutable. Similarly if we pass reference to constructor we can change the 
+         object state from that reference as well. So to prevent this we maintain deep copies.
+      > https://dzone.com/articles/immutable-objects-in-java
+         
+
