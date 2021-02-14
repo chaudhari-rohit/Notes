@@ -63,4 +63,25 @@ Notes
          object state from that reference as well. So to prevent this we maintain deep copies.
       > https://dzone.com/articles/immutable-objects-in-java
          
+- Java Pass by Value or Reference?
+    - Java is Pass by Value.For primitive its clear. For Objects we actually pass the reference 
+      as value. so not the `reference itself but reference value` so when passed like this the 
+      new variable has the passed reference value. So operations on the variable will not impact 
+      the variable which had original reference. Operation using the copied reference will 
+      impact the original variable.
+      ```java
+        public static void main(String[] args){
+          Foo f = new Foo("f");
+          changeReference(f); // It won't change the reference!
+          modifyReference(f); // It will change the object that the reference variable "f" refers to!
+        }
+        public static void changeReference(Foo a) {
+          Foo b = new Foo("b");
+          a = b;
+        }
+        public static void modifyReference(Foo c) {
+          c.setAttribute("c");
+        }
+      ```
+      
 
