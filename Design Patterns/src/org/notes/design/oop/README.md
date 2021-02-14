@@ -13,4 +13,4 @@ Class Diagrams
 - `Generalization`: Generalization is the mechanism for combining similar classes of objects into 
    a single, more general class. `Extends` kind of thing.
   
-![img.png](img.png)
+![resources/img.png](img.png)
