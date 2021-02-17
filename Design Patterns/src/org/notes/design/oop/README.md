@@ -14,3 +14,10 @@ Class Diagrams
    a single, more general class. `Extends` kind of thing.
   
 ![img.png](resources/img.png)
+
+----------------------------------------------------
+CAP Theorem
+----------------------------------------------------
+
+
+![img.png](resources/cap.png)
